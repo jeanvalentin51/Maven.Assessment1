@@ -45,7 +45,6 @@ public abstract class Pet implements Animal {
      */
     public String getName() {
 
-        if (this.petName == "") this.petName = "Cat name";
         return this.petName;
     }
 
