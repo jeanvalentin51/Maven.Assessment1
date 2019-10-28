@@ -10,9 +10,9 @@ public class Palindrome {
         result = input.length();
 
         // get the doubles
-        for (int i = 0; i < input.length(); i++) {
+        for (int i = 1; i < input.length() -1; i++) {
             if (i != input.length() - 1) {
-                if (stringLetters[i].equals(stringLetters[i + 1])) result++;
+                if (stringLetters[i].equals(stringLetters[i + 1]) || stringLetters[i].equals(stringLetters[i - 1])) result++;
             }
         }
 
