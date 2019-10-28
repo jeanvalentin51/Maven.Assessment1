@@ -16,14 +16,22 @@ public class PetOwner {
 
     public PetOwner(String name, Pet... pets) {
         this.petOwnerName = name;
-        if (pets!=null) this.petList.add(pets);
+
+        if (pets!=null) {
+            for (int i = 0; i < pets.length; i++) {
+                this.petList.add(pets);
+            }
+        }
     }
 
     /**
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet... pet) {
-        this.petList.add(pet);
+
+        for (int i = 0; i < pet.length; i++) {
+            if (pet!=null) this.petList.add(pet);
+        }
     }
 
     /**
@@ -31,6 +39,7 @@ public class PetOwner {
      */
     public void removePet(Pet pet) {
 
+        if (this.petList.size()>0) this.petList.remove(pet);
     }
 
     /**
@@ -73,7 +82,11 @@ public class PetOwner {
      * @return the number of Pet objects stored in this class
      */
     public Integer getNumberOfPets() {
-        return null;
+        int numberOfPets = 0;
+
+        numberOfPets = this.petList.size();
+
+        return numberOfPets;
     }
 
     /**
