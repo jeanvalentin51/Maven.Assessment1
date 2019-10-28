@@ -71,7 +71,15 @@ public class StringUtils {
      * given a string and index, return an identical string excluding the character at the specified index
      */
     public static String removeCharacterAtIndex(String str, int index) {
-        return null;
+        String result = "";
+        String firstPart = "";
+        String secondPart = "";
+
+        firstPart = str.substring(0,index);
+        secondPart = str.substring(index+1,str.length());
+
+        result = firstPart.concat(secondPart);
+        return result;
     }
 
 }
