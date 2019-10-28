@@ -16,13 +16,14 @@ public class PetOwner {
 
     public PetOwner(String name, Pet... pets) {
         this.petOwnerName = name;
-        this.petList.add(pets);
+        if (pets!=null) this.petList.add(pets);
     }
 
     /**
      * @param pet pet to be added to the composite collection of Pets
      */
-    public void addPet(Pet pet) {
+    public void addPet(Pet... pet) {
+        this.petList.add(pet);
     }
 
     /**
@@ -37,7 +38,10 @@ public class PetOwner {
      * @return true if I own this pet
      */
     public Boolean isOwnerOf(Pet pet) {
-        return null;
+        boolean result = false;
+
+
+        return result;
     }
 
     /**
@@ -83,6 +87,7 @@ public class PetOwner {
      * @return array representation of animals owned by this PetOwner
      */
     public Pet[] getPets() {
+
         return petList.get(0);
     }
 }
