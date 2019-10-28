@@ -35,6 +35,12 @@ public class IntegerArrayUtils {
      * @return the sum of `intArray` divided by number of elements in `intArray`
      */
     public static Double getAverage(Integer[] intArray) {
-        return null;
+        double result = 0;
+        int sumOfNumbers = 0;
+
+        sumOfNumbers = getSum(intArray);
+
+        result = sumOfNumbers / intArray.length;
+        return result;
     }
 }
