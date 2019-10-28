@@ -39,7 +39,11 @@ public class BasicStringUtils {
      * @return string with identical contents, in reverse order, with first character capitalized
      */
     public static String reverseThenCamelCase(String str) {
-        return null;
+        String result = "";
+
+        result = reverse(str);
+        result = camelCase(result);
+        return result;
     }
 
 
