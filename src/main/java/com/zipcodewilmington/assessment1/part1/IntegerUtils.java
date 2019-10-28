@@ -38,6 +38,16 @@ public class IntegerUtils {
      * @return integer with identical digits in the reverse order
      */
     public static Integer reverseDigits(Integer val) {
-        return null;
+        int result=0;
+        String stringToReverse = "";
+        String characterHolder = "";
+
+        stringToReverse = String.valueOf(val);
+
+        for (int i = stringToReverse.length(); i >0 ; i--){
+            characterHolder += stringToReverse.valueOf(i);
+        }
+
+        return Integer.valueOf(characterHolder);
     }
 }
