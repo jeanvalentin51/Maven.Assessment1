@@ -52,7 +52,10 @@ public class BasicStringUtils {
      * @return string with identical contents excluding first and last character
      */
     public static String removeFirstAndLastCharacter(String str) {
-        return null;
+        String result = "";
+
+        result = str.substring(1,str.length() - 1);
+        return result;
     }
 
     /**
