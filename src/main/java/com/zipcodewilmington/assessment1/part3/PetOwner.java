@@ -75,7 +75,15 @@ public class PetOwner {
      * @return the sum of ages of Pet objects stored in this class divided by the number of Pet object
      */
     public Float getAveragePetAge() {
-        return null;
+        int averageAge = 0;
+
+
+        for (int i = 0; i < this.petList.size(); i++) {
+            System.out.println(this.petList.get(i));
+        }
+        averageAge = averageAge/this.petList.size();
+
+        return (float) averageAge;
     }
 
     /**
