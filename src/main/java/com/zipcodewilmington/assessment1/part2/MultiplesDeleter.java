@@ -98,6 +98,26 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with numbers indivisible by `multiple` removed
      */
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
-        return null;
+        Integer [] result;
+        int elementValue = 0;
+        int counter = 0;
+
+        for (int i = 0; i < ints.length; i++){
+            elementValue = ints[i];
+            if (elementValue%multiple==0) counter++;
+        }
+
+        result = new Integer [ints.length - counter];
+        counter = 0;
+
+        for (int i = 0; i < ints.length; i++){
+            elementValue = ints[i];
+            if (elementValue%multiple!=0) {
+                result[counter] = ints[i];
+                counter++;
+            }
+        }
+
+        return result;
     }
 }
