@@ -24,7 +24,7 @@ public class Cat extends Pet {
      * @param name name of this Cat
      */
     public Cat(String name) {
-
+        super(name);
     }
 
     /**
@@ -34,6 +34,7 @@ public class Cat extends Pet {
      * age is 0
      */
     public Cat() {
+        super("Cat name");
     }
 
     /**
