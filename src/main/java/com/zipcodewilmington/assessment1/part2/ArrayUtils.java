@@ -1,5 +1,7 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.ArrayList;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -27,7 +29,23 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        return null;
+        Integer [] result;
+        int counter = 0;
+
+        counter = getNumberOfOccurrences(objectArray,objectToRemove);
+        result = new Integer[objectArray.length - counter];
+        counter = 0;
+
+        for (int i = 0; i < objectArray.length; i++){
+            if (objectArray[i].equals(objectToRemove)){
+
+            }else {
+                result[counter] = (Integer) objectArray[i];
+                counter ++;
+            }
+        }
+
+        return result;
     }
 
     /**
