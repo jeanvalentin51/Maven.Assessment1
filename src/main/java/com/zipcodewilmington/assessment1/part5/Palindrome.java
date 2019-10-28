@@ -3,6 +3,19 @@ package com.zipcodewilmington.assessment1.part5;
 public class Palindrome {
 
     public Integer countPalindromes(String input){
-        return null;
+        int result = 0;
+        String [] stringLetters = new String[input.length()];
+        stringLetters = input.split("");
+
+        result = input.length();
+
+        // get the doubles
+        for (int i = 0; i < input.length(); i++) {
+            if (i != input.length() - 1) {
+                if (stringLetters[i].equals(stringLetters[i + 1])) result++;
+            }
+        }
+
+        return result;
     }
 }
