@@ -86,7 +86,28 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+        Integer result = 0;
+        int counterMax = 1;
+        int counterMin = 1;
+
+        Arrays.sort(objectArray);
+
+        for (int i = 0; i < objectArray.length; i++){
+
+            if (objectArray[i].equals(objectArray[i+1])){
+                counterMax ++;
+            } else {
+                counterMin = counterMax;
+            }
+
+            if (counterMin < counterMax) {
+                //counterMax = counterEachElement;
+                result = (Integer) objectArray[i];
+                //if (objectArray[i].equals(objectArray[i-1]) && i != 0) counterMin = 1;
+            }
+        }
+
+        return result;
     }
 
     /**
@@ -96,6 +117,17 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-        return null;
+        Integer[] result = new Integer[objectArray.length + objectArrayToAdd.length];
+        int shiftValue = objectArray.length;
+
+        for (int i = 0; i < objectArray.length; i ++) {
+            result[i] = (Integer) objectArray[i];
+        }
+
+        for (int x = objectArrayToAdd.length - 1; x >= 0; x--){
+
+            result[x + shiftValue] = (Integer) objectArrayToAdd[x];
+        }
+        return result;
     }
 }
