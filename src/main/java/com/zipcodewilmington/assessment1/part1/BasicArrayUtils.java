@@ -21,7 +21,10 @@ public class BasicArrayUtils {
      * @return the second element in the array
      */
     public static String getSecondElement(String[] stringArray) {
-        return null;
+        String result = "";
+
+        result = stringArray[1];
+        return result;
     }
 
     /**
