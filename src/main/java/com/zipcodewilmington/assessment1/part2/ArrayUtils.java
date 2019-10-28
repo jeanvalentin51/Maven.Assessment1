@@ -88,22 +88,22 @@ public class ArrayUtils {
     public static Object getLeastCommon(Object[] objectArray) {
         Integer result = 0;
         int counterMax = 1;
-        int counterMin = 1;
+        int counterMin = objectArray.length;
 
         Arrays.sort(objectArray);
 
         for (int i = 0; i < objectArray.length; i++){
-
-            if (objectArray[i].equals(objectArray[i+1])){
-                counterMax ++;
-            } else {
-                counterMin = counterMax;
+            if (i != objectArray.length - 1) {
+                if (objectArray[i].equals(objectArray[i + 1])) {
+                    counterMax++;
+                } else {
+                    counterMax = 1;
+                }
             }
 
-            if (counterMin < counterMax) {
-                //counterMax = counterEachElement;
-                result = (Integer) objectArray[i];
-                //if (objectArray[i].equals(objectArray[i-1]) && i != 0) counterMin = 1;
+            if (counterMin > counterMax) {
+                result = (Integer) objectArray[i +1];
+                counterMin = counterMax;
             }
         }
 
