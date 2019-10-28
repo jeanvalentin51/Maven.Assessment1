@@ -32,7 +32,10 @@ public class BasicArrayUtils {
      * @return the last element in the array
      */
     public static String getLastElement(String[] stringArray) {
-        return null;
+        String result = "";
+
+        result = stringArray[stringArray.length - 1];
+        return result;
     }
 
     /**
