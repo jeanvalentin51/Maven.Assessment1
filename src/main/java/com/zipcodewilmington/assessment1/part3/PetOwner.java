@@ -1,5 +1,7 @@
 package com.zipcodewilmington.assessment1.part3;
 
+import java.util.ArrayList;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -8,7 +10,13 @@ public class PetOwner {
      * @param name name of the owner of the Pet
      * @param pets array of Pet object
      */
+
+    private String petOwnerName = "";
+    private ArrayList<Pet[]> petList = new ArrayList<Pet[]>();
+
     public PetOwner(String name, Pet... pets) {
+        this.petOwnerName = name;
+        this.petList.add(pets);
     }
 
     /**
@@ -68,13 +76,13 @@ public class PetOwner {
      * @return the name property of the Pet
      */
     public String getName() {
-        return null;
+        return this.petOwnerName;
     }
 
     /**
      * @return array representation of animals owned by this PetOwner
      */
     public Pet[] getPets() {
-        return null;
+        return petList.get(0);
     }
 }
