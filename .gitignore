@@ -153,3 +153,6 @@ fabric.properties
 
 #maven build target
 target/
+
+#Apple files
+*.DS_Store
