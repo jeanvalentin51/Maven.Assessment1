@@ -6,6 +6,13 @@ public class Jumper {
      * Complete the function below.
      */
     public int jumps(int k, int j) {
-        return -1;
+
+        int minSteps = 0;
+
+        // jump the same as the distance
+        if (k == j) minSteps = 1;
+
+
+        return minSteps;
     }
 }
