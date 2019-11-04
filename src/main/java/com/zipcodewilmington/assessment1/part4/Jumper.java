@@ -12,7 +12,9 @@ public class Jumper {
         // jump the same as the distance
         if (k == j) minSteps = 1;
 
+        if (k%j == 0 ) minSteps = k/j;
 
+        if (k%j !=0) minSteps = k/j + k%j;
         return minSteps;
     }
 }

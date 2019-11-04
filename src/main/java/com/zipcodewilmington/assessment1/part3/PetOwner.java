@@ -1,6 +1,7 @@
 package com.zipcodewilmington.assessment1.part3;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by leon on 2/16/18.
@@ -11,15 +12,19 @@ public class PetOwner {
      * @param pets array of Pet object
      */
 
-    private String petOwnerName = "";
-    private ArrayList<Pet[]> petList = new ArrayList<Pet[]>();
+    private String petOwnerName;
+    //private ArrayList<Pet> petList;
+    private Pet [] petList;
 
     public PetOwner(String name, Pet... pets) {
         this.petOwnerName = name;
+       // this.petList.addAll(Arrays.asList(pets));
+        this.petList = pets;
 
+        // loop through the array and set the pet's owner to each pet passed
         if (pets!=null) {
             for (int i = 0; i < pets.length; i++) {
-                this.petList.add(pets);
+                //this.petList.get(i).setOwner(this);
             }
         }
     }
@@ -29,8 +34,11 @@ public class PetOwner {
      */
     public void addPet(Pet... pet) {
 
-        for (int i = 0; i < pet.length; i++) {
-            if (pet!=null) this.petList.add(pet);
+        // loop through the array and set the pet's owner to each pet passed
+        if (pet!=null) {
+            for (int i = 0; i < pet.length; i++) {
+                //this.petList[i] =
+            }
         }
     }
 
@@ -39,7 +47,7 @@ public class PetOwner {
      */
     public void removePet(Pet pet) {
 
-        if (this.petList.size()>0) this.petList.remove(pet);
+        //if (this.petList.size()>0) this.petList.remove(pet);
     }
 
     /**
@@ -47,10 +55,17 @@ public class PetOwner {
      * @return true if I own this pet
      */
     public Boolean isOwnerOf(Pet pet) {
-        boolean result = false;
 
+        // is the owner this object?
+        //return pet.getOwner() == this;
 
-        return result;
+        for (int i = 0; i < this.petList.length; i++) {
+            if (this.petList[i].equals(pet)){
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -78,10 +93,10 @@ public class PetOwner {
         int averageAge = 0;
 
 
-        for (int i = 0; i < this.petList.size(); i++) {
-            System.out.println(this.petList.get(i));
-        }
-        averageAge = averageAge/this.petList.size();
+//        for (int i = 0; i < this.petList.size(); i++) {
+//            System.out.println(this.petList.get(i));
+//        }
+//        averageAge = averageAge/this.petList.size();
 
         return (float) averageAge;
     }
@@ -92,7 +107,7 @@ public class PetOwner {
     public Integer getNumberOfPets() {
         int numberOfPets = 0;
 
-        numberOfPets = this.petList.size();
+        //numberOfPets = this.petList.size();
 
         return numberOfPets;
     }
@@ -109,6 +124,6 @@ public class PetOwner {
      */
     public Pet[] getPets() {
 
-        return petList.get(0);
+        return null;
     }
 }
