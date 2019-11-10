@@ -63,9 +63,7 @@ public abstract class Pet implements Animal {
     public void setOwner(PetOwner newPetOwner) {
 
         this.petOwner = newPetOwner;
-
-        // added later
-        newPetOwner.addPet(this);
+       // newPetOwner.addPet(this);
     }
 
     /**
